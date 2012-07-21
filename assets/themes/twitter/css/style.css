@@ -86,9 +86,6 @@ html, body {
   width: 110px;
 }
 
-.about {
-}
-
 .about p {
   margin-top: 15px;
   padding: 10px;
@@ -96,4 +93,8 @@ html, body {
 
 .about h1, .contact h1 {
   margin-left: 5px;
+}
+
+.twitter_header, .recent_tweets, .twitter_button {
+  display: none;
 }
