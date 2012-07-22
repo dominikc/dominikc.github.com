@@ -95,6 +95,15 @@ html, body {
   margin-left: 5px;
 }
 
-.twitter_header, .recent_tweets, .twitter_button {
+.twitter_header {
+  line-height: 29px;
   display: none;
+}
+
+.recent_tweets  {
+  display: none;
+}
+
+.twitter_button {
+  visibility: hidden;
 }
