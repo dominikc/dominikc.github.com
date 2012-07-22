@@ -74,11 +74,14 @@ function LoadTweets() {
         html += '<small><a href="http://twitter.com/'+username+'">@'+username+'</a></small>';
       html += '</blockquote></div>';
 
-      if ($('.recent_tweets').css('height').replace('px','') < 330)
+      if ($('.recent_tweets').css('height').replace('px','') < 330) {
         $('.recent_tweets').append(html);
-      else
-        $('.twitter_header, .recent_tweets, .twitter_button').fadeIn();
-
+      } else {
+        $('.twitter_header, .recent_tweets').fadeIn();
+        setTimeout(function() {
+          $('.twitter_button').css('visibility', 'visible').hide().fadeIn();
+        }, 500);
+      }
     });
   });
 }
