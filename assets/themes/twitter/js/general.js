@@ -1,30 +1,9 @@
 $(document).ready(function() {
   $('#emailBtn').html('dominikc@me.com');
+  $('#emailBtn').bind('click', function() {
+    window.location = 'mailto:' + $(this).html();
+  })
   LoadTweets();
-});
-$('#contactSubmit').bind('click', function() {
-  $('#contactSubmit').button('loading');
-  $.post("http://cencek.pl/mailer.php", { name: $('#inputName').val(), email: $('#inputEmail').val(), content: $('#textarea').val() }, function(data) {
-    var element = $('#inputEmail').parent().parent();
-    (data.invalid_email == true) ? element.addClass('error') : element.removeClass('error');
-
-    element = $('#textarea').parent().parent();
-    (data.invalid_content == true) ? element.addClass('error') : element.removeClass('error');
-
-    (data.error == true) ? $('#contactSubmit').addClass('btn-danger') : $('#contactSubmit').removeClass('btn-danger');
-    $('#contactSubmit').button('reset');
-
-    if (data.success == true) {
-      $('#contactForm').modal('hide');
-    }
-  }, "json");
-});
-
-$('#contactReset').bind('click', function() {
-  $('contactForm').find('form').reset();
-  $('#contactSubmit').removeClass('btn-danger');
-  $('#inputEmail').parent().parent().removeClass('error');
-  $('#textarea').parent().parent().removeClass('error');
 });
 
 function LoadTweets() {
