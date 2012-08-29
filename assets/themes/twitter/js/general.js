@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  $('#emailBtn').html('dominikc@me.com');
-  $('#emailBtn').bind('click', function() {
-    window.location = 'mailto:' + $(this).html();
-  })
   LoadTweets();
 });
 
