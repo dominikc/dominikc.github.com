@@ -16,7 +16,7 @@ function LoadTweets() {
       var diff = Math.round((now.getTime() - tweet_date.getTime())/1000);
       var right = 0;
       for (var sec in seconds) {
-        if (sec < diff) right = sec;
+        if (seconds[sec] < diff) right = sec;
       }
       var q = Math.floor(diff / seconds[right]);
       date_s = q + " " + names[right] + ((q==1) ? "":"s") + " ago";
