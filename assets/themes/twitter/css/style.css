@@ -97,13 +97,4 @@ html, body {
 
 .twitter_header {
   line-height: 29px;
-  display: none;
-}
-
-.recent_tweets  {
-  display: none;
-}
-
-.twitter_button {
-  visibility: hidden;
 }
